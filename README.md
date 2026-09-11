@@ -1,5 +1,7 @@
 # Quax Game
-A Java implementation of Quax, a Hex-style board game. Features a responsive JavaFX user interface, a speedy custom heuristic bot opponent and a fully replayable gameplay loop.
+A Java implementation of Quax, a Hex-style board game. Features a responsive JavaFX user interface, a speedy custom heuristic bot opponent and a fully replayable gameplay loop. \
+\
+Created in collaboration with Dominick Odujebe and Alex Zuzuleac.
 
 ## Game Rules
 1. Quax takes place on an 11x11 board between two players, white and black. Your colour is randomly selected at the start of each round.
@@ -15,4 +17,35 @@ This design came with two benefits - it was easy to display/debug the bot's inte
 on programming a solid priority system without the overhead of the bot.
 \
 \
-We landed on an set of specific bot strategies to determine priority values. The strategies are as follows:
+We landed on a set of specific bot strategies to determine priority values. The strategies are as follows:
+- **Opening Strategy:** the bot picks a random central tile as an opening move
+- **Winning Strategy:** the bot picks a tile that will directly lead to victory
+- **Blocking Strategy:** the bot blocks a tile that will directly lead the opponent to victory
+- **Defensive Strategy:** the bot picks a tile that blocks the opponent's strongest line
+- **Pathfinding Strategy:** the bot picks a tile to strengthen its own line
+- **Pressure Strategy:** the bot picks a tile near the opponent's line to reduce their options
+- **Rhombus Strategy:** the bot picks a rhombus that blocks the formation of an enemy line
+\
+...and many more minor strategies.
+
+## Architecture
+The project is set up to loosely follow the Model-View-Controller architecture. Our classes show a clear separation of concern.
+- **QuaxGame:** acts as the model, with the current state being stored in a `QuaxBoard` object. All game requests go through `QuaxGame`, which validates the request based on the current state of the board.
+- **BoardFX:** acts as the view. The user interface is created and updated through this object.
+- **BotController:** acts as the controller. The bot logic is stored here, using the `QuaxBoard` state to make heuristic decisions.
+
+## How to Run
+### Via IntelliJ
+1. Set up a new project
+2. Copy everything from the 'src' folder into the 'src' folder of the project
+3. Under 'Project Structure', set the SDK to ms-21
+4. In the 'Modules' tab, go to 'Dependencies' and add every .jar file from the javafx lib
+   folder
+5. In the 'Libraries' tab, add the javafx lib folder as a new entry
+6. Create a new run configuration, and add the following to the VM options:
+   --module-path path/to/javafx/lib --add-modules=javafx.controls
+7. Run the main method in the Main.java file
+### Via JAR File
+1. Install the Quax.jar file and a Java Runtime Environment
+2. Ensure you have the JavaFx SDK 21 package in the same directory as the .JAR file
+3. Run the following command: java --module-path javafx-sdk-21.0.10/lib --add-modules javafx.controls,javafx.fxml -jar Quax.jar

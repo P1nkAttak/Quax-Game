@@ -653,6 +653,7 @@ private void handleBotTurn(QuaxBoard boardState) {
         strategyLabel.setText(
                 bot.getLastStrategyUsed() + "\n" + bot.getLastExplanation()
         );
+        updateScores();
     }
 
     private void showStartDialog(QuaxBoard boardState) {
