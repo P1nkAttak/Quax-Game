@@ -31,8 +31,8 @@ We landed on a set of specific bot strategies to determine priority values. The 
 
 ...and many more minor strategies.
 
-![The bot in action showing its strategy](/assets/Bot-Strategy.png)
-***The bot in action showing its strategies***
+![The bot showing its strategy and tile weights](/assets/Bot-Strategy.png)
+***The bot showing its strategy and tile weights***
 
 
 ## Architecture

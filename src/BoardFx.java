@@ -133,7 +133,7 @@ public class BoardFx {
     }
 
     private void setupTopSection() {
-        Label title = new Label("QUAX (Human V Bot)");
+        Label title = new Label("QUAX (Player vs. Bot)");
         title.setStyle("-fx-font-size: 28px; -fx-font-weight: bold;");
         title.setTextFill(theme.getTextColour());
 
@@ -148,7 +148,7 @@ public class BoardFx {
         StackPane rootPane = new StackPane(root, winOverlay);
 
         Scene scene = new Scene(rootPane, 900, 750);
-        stage.setTitle("Quax Game (Player vs. Player)");
+        stage.setTitle("Quax Game (Player vs. Bot)");
         stage.setScene(scene);
 
         stage.setMinWidth(1000);
