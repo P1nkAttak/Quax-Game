@@ -3,6 +3,9 @@ A Java implementation of Quax, a Hex-style board game. Features a responsive Jav
 \
 Created in collaboration with Dominick Odujebe and Alex Zuzuleac.
 
+![A Quax game in progress](/assets/Quax-Game.png)
+***A Quax game in progress***
+
 ## Game Rules
 1. Quax takes place on an 11x11 board between two players, white and black. Your colour is randomly selected at the start of each round.
 2. There are two tile types - octagons and rhombuses. Any unoccupied octagon can be taken freely on your turn. An unoccupied rhombus can only be taken if it forms a diagonal connection between two of your own octagons.
@@ -25,8 +28,12 @@ We landed on a set of specific bot strategies to determine priority values. The 
 - **Pathfinding Strategy:** the bot picks a tile to strengthen its own line
 - **Pressure Strategy:** the bot picks a tile near the opponent's line to reduce their options
 - **Rhombus Strategy:** the bot picks a rhombus that blocks the formation of an enemy line
-\
+
 ...and many more minor strategies.
+
+![The bot in action showing its strategy](/assets/Bot-Strategy.png)
+***The bot in action showing its strategies***
+
 
 ## Architecture
 The project is set up to loosely follow the Model-View-Controller architecture. Our classes show a clear separation of concern.
